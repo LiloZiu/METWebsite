@@ -1,0 +1,52 @@
+// Misc.
+$misc: (
+        z-index-base:		99,
+        max-features:		20,
+        max-sidebar-links:	10
+);
+
+// Duration.
+$duration: (
+        transition:			0.2s,
+        activation:			1s
+);
+
+// Size.
+$size: (
+        border-radius:		0.25em,
+        border-width:		1px,
+        element-height:		2.75em,
+        element-margin:		2em,
+        sidebar-width:		16em,
+        sidebar-width-alt:  14em,
+        sidebar-height:		3.5em,	// when <=large is active
+        inner-width:		75em
+);
+
+// Font.
+$font: (
+        family:				("Corporate Garamond", Serif),
+        family-fixed:		(Tangerine, cursive),
+        weight:				normal,
+        weight-bold:		bold,
+        kerning-alt:		0.25em
+);
+
+// Palette.
+$palette: (
+        bg: 				rgba(10, 41, 96, 0.98),
+        bg-alt:				darken(rgb(10, 41, 96),5),
+        fg:                 rgba(255, 255, 255, 0.85),
+        fg-bold:			rgba(255, 255, 255, 0.99),
+        fg-light:			rgba(255,255,255,0.35),
+        fg-title:            #ffd700,
+        border:				rgba(255,255,255,0.15),
+        border-bg:			rgba(255,255,255,0.05),
+        accent1:			#45ba9f,
+        accent1-alt:	 	darken(#45ba9f, 10),
+        accent2:			#4fa7b0,
+        accent2-alt:		darken(#4fa7b0, 10),
+        accent3:			#4a7cb5,
+        accent3-alt:		darken(#4a7cb5, 10),
+
+);

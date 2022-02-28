@@ -2,8 +2,9 @@
 
 	var	$window = $(window),
 		$body = $('body'),
-		$sidebar = $('#sidebar');
-
+		$sidebar = $('#sidebar'),
+		$mobileheader = $('#mobile-header')
+	;
 	// Breakpoints.
 		breakpoints({
 			xlarge:   [ '1281px',  '1680px' ],
@@ -180,6 +181,130 @@
 
 				}
 			});
+	// Mobile Header.
+	if ($body.length > 0
+		&&	$mobileheader.hasClass('alt')) {
+
+		$window.on('resize', function() {
+			$window.trigger('scroll');
+		});
+
+		$window.on('load', function() {
+
+			$banner.scrollex({
+				bottom:		$mobileheader.height() + 10,
+				terminate:	function() { $mobileheader.removeClass('alt'); },
+				enter:		function() { $mobileheader.addClass('alt'); },
+				leave:		function() { $mobileheader.removeClass('alt'); $mobileheader.addClass('reveal'); }
+			});
+
+			window.setTimeout(function() {
+				$window.triggerHandler('scroll');
+			}, 100);
+
+		});
+
+	}
+	// Menu.
+	var $mobilemenu = $('#mobile-menu'),
+		$mobilemenuInner;
+
+	$mobilemenu.wrapInner('<div class="inner"></div>');
+	$mobilemenuInner = $mobilemenu.children('.inner');
+	$mobilemenu._locked = false;
+
+	$mobilemenu._lock = function() {
+
+		if ($mobilemenu._locked)
+			return false;
+
+		$mobilemenu._locked = true;
+
+		window.setTimeout(function() {
+			$mobilemenu._locked = false;
+		}, 350);
+
+		return true;
+
+	};
+
+	$mobilemenu._show = function() {
+
+		if ($mobilemenu._lock())
+			$body.addClass('is-menu-visible');
+
+	};
+
+	$mobilemenu._hide = function() {
+
+		if ($mobilemenu._lock())
+			$mobilebody.removeClass('is-menu-visible');
+
+	};
+
+	$mobilemenu._toggle = function() {
+
+		if ($mobilemenu._lock())
+			$body.toggleClass('is-menu-visible');
+
+	};
+
+	$mobilemenuInner
+		.on('click', function(event) {
+			event.stopPropagation();
+		})
+		.on('click', 'a', function(event) {
+
+			var href = $(this).attr('href');
+
+			event.preventDefault();
+			event.stopPropagation();
+
+			// Hide.
+			$mobilemenu._hide();
+
+			// Redirect.
+			window.setTimeout(function() {
+				window.location.href = href;
+			}, 250);
+
+		});
+
+	$mobilemenu
+		.appendTo($body)
+		.on('click', function(event) {
+
+			event.stopPropagation();
+			event.preventDefault();
+
+			$body.removeClass('is-menu-visible');
+
+		})
+		.append('<a class="close" href="#mobile-menu">Close</a>');
+
+	$body
+		.on('click', 'a[href="#mobile-menu"]', function(event) {
+
+			event.stopPropagation();
+			event.preventDefault();
+
+			// Toggle.
+			$mobilemenu._toggle();
+
+		})
+		.on('click', function(event) {
+
+			// Hide.
+			$mobilemenu._hide();
+
+		})
+		.on('keydown', function(event) {
+
+			// Hide on escape.
+			if (event.keyCode == 27)
+				$mobilemenu._hide();
+
+		});
 
 })(jQuery);
 
@@ -204,16 +329,106 @@ function draw() {
 	document.getElementById("Layer_1").classList.add('active')
 }
 
-setTimeout(draw, 300)
+setTimeout(draw, 3000)
 
-//Slideshow initiation
-function startslideshow(){
-	document.getElementById('slideshow_div').mixSlide({
-		autoplay:true,
-		transition : {name :"fade"},
-		animation:{speed:1, delay:3},
-		controls: {active:true, position :'top'},
-		thumbs:{active: true, position :'bottom'}
+// Menu.
+var $mobilemenu = $('#mobile-menu'),
+	$mobilemenuInner;
+
+$mobilemenu.wrapInner('<div class="inner"></div>');
+$mobilemenuInner = $mobilemenu.children('.inner');
+$mobilemenu._locked = false;
+
+$mobilemenu._lock = function() {
+
+	if ($mobilemenu._locked)
+		return false;
+
+	$mobilemenu._locked = true;
+
+	window.setTimeout(function() {
+		$mobilemenu._locked = false;
+	}, 350);
+
+	return true;
+
+};
+
+$mobilemenu._show = function() {
+
+	if ($mobilemenu._lock())
+		$body.addClass('is-menu-visible');
+
+};
+
+$mobilemenu._hide = function() {
+
+	if ($mobilemenu._lock())
+		$mobilebody.removeClass('is-menu-visible');
+
+};
+
+$mobilemenu._toggle = function() {
+
+	if ($mobilemenu._lock())
+		$body.toggleClass('is-menu-visible');
+
+};
+
+$mobilemenuInner
+	.on('click', function(event) {
+		event.stopPropagation();
+	})
+	.on('click', 'a', function(event) {
+
+		var href = $(this).attr('href');
+
+		event.preventDefault();
+		event.stopPropagation();
+
+		// Hide.
+		$mobilemenu._hide();
+
+		// Redirect.
+		window.setTimeout(function() {
+			window.location.href = href;
+		}, 250);
+
 	});
-}
+
+$mobilemenu
+	.appendTo($body)
+	.on('click', function(event) {
+
+		event.stopPropagation();
+		event.preventDefault();
+
+		$body.removeClass('is-menu-visible');
+
+	})
+	.append('<a class="close" href="#mobile-menu">Close</a>');
+
+$body
+	.on('click', 'a[href="#mobile-menu"]', function(event) {
+
+		event.stopPropagation();
+		event.preventDefault();
+
+		// Toggle.
+		$mobilemenu._toggle();
+
+	})
+	.on('click', function(event) {
+
+		// Hide.
+		$mobilemenu._hide();
+
+	})
+	.on('keydown', function(event) {
+
+		// Hide on escape.
+		if (event.keyCode == 27)
+			$mobilemenu._hide();
+
+	});
 

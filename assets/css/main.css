@@ -2785,6 +2785,9 @@ body.is-ie .wrapper.fullscreen {
 #header > nav > ul > li a.active {
   color: rgba(255, 255, 255, 0.99);
 }
+#header > nav > ul > li  {
+  color: rgba(255, 255, 255, 0.85);
+}
 @media screen and (max-width: 736px) {
   #header {
     padding: 1em 2em;
@@ -3037,7 +3040,7 @@ body.is-preload #sidebar nav nav ul li {
 }
 @media screen and (max-width: 736px) {
   #sidebar {
-    display: none;
+   display: none;
   }
 }
 

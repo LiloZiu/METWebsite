@@ -315,6 +315,7 @@ jQuery(document).ready(function(){
 		delay:		 0.2			// 0.2 second delay on mouseout
 	});
 });
+
 //Sidebar width toggle
 function toggleSidebarwidth(event) {
 	mouseinelement=event.offsetX<document.getElementById("sidebar").offsetWidth
@@ -324,6 +325,11 @@ function toggleSidebarwidth(event) {
 		document.getElementById("sidebar").style.width = "16em";
 	}
 }
+
+function collapseSidebar(event){
+	document.getElementById("sidebar").style.width="16em"
+}
+
 //Svg draw
 function draw() {
 	document.getElementById("Layer_1").classList.add('active')

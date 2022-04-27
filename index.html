@@ -1,111 +1,52 @@
 <!DOCTYPE HTML>
-<html lang="en-uk" xmlns="http://www.w3.org/1999/html" xmlns="http://www.w3.org/1999/html"
-      xmlns="http://www.w3.org/1999/html" xmlns="http://www.w3.org/1999/html" xmlns="http://www.w3.org/1999/html">
+<html lang="en-uk" xmlns="http://www.w3.org/1999/html" xmlns="http://www.w3.org/1999/html" xmlns="http://www.w3.org/1999/html" xmlns="http://www.w3.org/1999/html" xmlns="http://www.w3.org/1999/html">
 <head>
     <title>MET</title>
     <meta charset="utf-8"/>
     <meta name="viewport" content="width=device-width, initial-scale=1, user-scalable=no" />
     <link rel="icon" type="image/png" href="http://mihaieminescutrust.com/favicon.png">
     <link rel="stylesheet" href="assets/css/main.css"/>
-    <link rel="stylesheet" media="screen" href="assets/css/superfish.css">
-    <link rel="stylesheet" media="screen" href="assets/css/superfish-vertical.css">
+    <link rel="stylesheet" href="assets/css/overlay.css"/>
     <noscript><link rel="stylesheet" href="assets/css/noscript.css" /></noscript>
 </head>
-<body class="is-preload">
-<header id="header" onload="this.offsetTop">
-    <nav>
-        <ul class="">
-            <li><a href="#about-us_our-story" class="active">About Us</a></li>
-            <li><a href="#projects" class="active">Projects</a></li>
-            <li><a href="#guesthouses_selection" class="active">Guesthouses</a></li>
-            <li><a href="Content/Slideshow.html" class="active">Slideshow</a></li>
-            <li><a href="Content/Map.html" class="active">Map</a></li>
-            <li><a href="#publications_selection" class="active">Publications</a></li>
-            <li><a href="#news_selection" class="active">News</a></li>
-        </ul>
-    </nav>
-</header>
-<!-- Sidebar -->
-<section id="sidebar" onmouseenter="toggleSidebarwidth(event)" onmouseleave="toggleSidebarwidth(event)" >
-    <div class="inner" >
-        <nav>
-            <ul class="sf-menu sf-vertical" >
 
-                <li>
-                    <a href="#welcome" onclick=collapseSidebar()>Welcome</a>
-                </li>
-                <li>
-                    <a href="#about-us_who-we-are" onclick=collapseSidebar()>About Us</a>
-                    <ul>
-                        <li><a href="#about-us_who-we-are" onclick=collapseSidebar()>Who We Are</a></li>
-                        <li><a href="#about-us_our-story" onclick=collapseSidebar()>Origins of the Trust</a></li>
-                        <li><a href="#about-us_patrons-and-advisers" onclick=collapseSidebar()>Patrons, Donors, Advisers</a></li>
-                        <li><a href="#about-us_sister-organisation" onclick=collapseSidebar()>Our Sister Organisation</a></li>
-                        <li><a href="Content/News/Supporters.html" onclick=collapseSidebar()>What our supporters have said</a></li>
-                    </ul>
-                </li>
-                <li>
-                    <a href="#projects" onclick=collapseSidebar()>Projects</a>
-                    <ul>
-                        <li><a href="Content/Projects/Other/GeneralConservation.html" onclick=collapseSidebar()>General Building Conservation</a></li>
-                        <li>
-                            <a href="Content/Projects/AllProjects.html" onclick=collapseSidebar()>More:Buildings</a>
-                            <ul>
-                                <li><a href="Content/Projects/Buildings/119Richis.html" onclick=collapseSidebar()>119 Richis</a></li>
-                                <li><a href="Content/Projects/Buildings/ApafiManor.html" onclick=collapseSidebar()>Apafi Manor</a></li>
-                                <li><a href="Content/Projects/Buildings/Viscri.html" onclick=collapseSidebar()>163 Viscri</a></li>
-                                <li><a href="Content/Projects/Buildings/AlmaViiChurch.html" onclick=collapseSidebar()>Alma Vii Church</a></li>
-                                <li><a href="Content/Projects/Buildings/FlorestiChurch.html" onclick=collapseSidebar()>Floreşti Church</a></li>
-                                <li><a href="Content/Projects/Buildings/TowerHouse.html" onclick=collapseSidebar()>Tower House</a></li>
-                            </ul>
-                        </li>
-                        <li><a href="Content/Projects/AllProjects.html#other" onclick=collapseSidebar()>More:Other</a>
-                        <ul>
-                            <li><a href="Content/Projects/Other/BreitePlateau.html" onclick=collapseSidebar()>Breite Plateau</a></li>
-                            <li><a href="Content/Projects/Other/Brick&TileKiln.html" onclick=collapseSidebar()>Brick and Tile Kiln</a></li>
-                            <li><a href="Content/Projects/Other/EcoH2O.html" onclick=collapseSidebar()>EcoH2O</a></li>
-                            <li><a href="Content/Projects/Other/AppleDay.html" onclick=collapseSidebar()>Apple Day</a></li>
-                        </ul>
-                        </li>
-                        <li><a href="Content/Projects/Other/WholeVillageProject.html" onclick=collapseSidebar()>Whole Village Project</a></li>
-                        <li><a href="Content/Projects/AllProjects.html" onclick=collapseSidebar()>See All Selected Projects</a></li>
-                    </ul>
-                </li>
-                <li>
-                    <a href="#guesthouses_selection" onclick=collapseSidebar()>Guest Houses</a>
-                    <ul>
-                        <li><a href="#guesthouses_selection" onclick=collapseSidebar()>Our selection</a></li>
-                        <li><a href="Content/Guesthouses/AllGuesthouses.html" onclick=collapseSidebar()>See All Selected Guesthouses</a></li>
-                    </ul>
-                </li>
-                <li><a href="Content/Slideshow.html" onclick=collapseSidebar()>Slideshow</a></li>
-                <li><a href="Content/Map.html" onclick=collapseSidebar()>Map</a></li>
-                <li>
-                    <a href="#publications_selection" onclick=collapseSidebar()>Publications</a>
-                    <ul>
-                        <li><a href="#publications_selection" onclick=collapseSidebar()>Our selection</a></li>
-                        <li><a href="Content/Publications.html" onclick=collapseSidebar()>Full list</a></li>
-                    </ul>
-                </li>
-                <li>
-                    <a href="#news_selection" onclick=collapseSidebar()>News</a>
-                    <ul>
-                        <li><a href="#news_selection" onclick=collapseSidebar()>Notable events</a></li>
-                        <li>
-                            <a href="#news_archive" onclick=collapseSidebar()>By year</a>
-                        </li>
-                    </ul>
-                </li>
-                <li>
-                    <a href="#supportus_donate" onclick=collapseSidebar()>Support Us</a>
-                    <ul>
-                        <li><a href="#supportus_donate" onclick=collapseSidebar()>Donate Now</a></li>
-                        <li><a href="#supportus_how-to-help" onclick=collapseSidebar()>Other ways to support us</a></li>
-                    </ul>
-                </li>
-                <li>
-                    <a href="#contact" onclick=collapseSidebar()>Contact Us</a>
-                </li>
+<body class="is-preload">
+<!-- Mobile Nav -->
+<div class="navbar-header">
+    <div class="toggle-button" id="toggle">
+        <span class="bar top"></span>
+        <span class="bar middle"></span>
+        <span class="bar bottom"></span>
+    </div>
+</div>
+<nav class="overlay" id="overlay">
+    <ul>
+        <li><a href="#welcome">Welcome</a></li>
+        <li><a href="#about-us_who-we-are">About Us</a></li>
+        <li><a href="#projects">Projects</a></li>
+        <li><a href="#guesthouses_selection">Guest Houses</a></li>
+        <li><a href="#slideshow">Slideshow</a></li>
+        <li><a href="#map">Map</a></li>
+        <li><a href="#publications_selection">Publications</a></li>
+        <li><a href="#news_selection">Events</a></li>
+        <li><a href="#supportus_donate">Contact</a></li>
+    </ul>
+</nav>
+
+<!-- Sidebar -->
+<section id="sidebar">
+    <div class="inner">
+        <nav>
+            <ul>
+                <li><a href="#welcome">Welcome</a></li>
+                <li><a href="#about-us_who-we-are">About Us</a></li>
+                <li><a href="#projects">Projects</a></li>
+                <li><a href="#guesthouses_selection">Guest Houses</a></li>
+                <li><a href="#slideshow">Slideshow</a></li>
+                <li><a href="#map">Map</a></li>
+                <li><a href="#publications_selection">Publications</a></li>
+                <li><a href="#news_selection">Events</a></li>
+                <li><a href="#supportus_donate">Contact</a></li>
             </ul>
         </nav>
     </div>
@@ -117,7 +58,7 @@
     <section id="welcome" class="wrapper style1 fullscreen fade-up" >
         <div class="inner">
             <a href="#" class="image fit"><img src="images/METWelcome.jpg" alt="One of our completed projects" style="border:none; outline: none" ></a>
-            <svg version="1.1" id="Layer_1" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" x="0px" y="0px" viewBox="0 0 375 70" xml:space="preserve" width="100%" height="175">
+            <svg id="Layer_1" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" x="0px" y="0px" viewBox="0 0 375 70" xml:space="preserve" width="100%" height="175">
                 <g id="Handwriting">
 	<path id="Trust" d="M342.3,13c0,2.1-0.5,2.5-2.9,2.5c-3.4,0-6.1,0.9-6.1,2c0,0.5,1.7,0.6,3.9,0.3l3.9-0.5l-0.9,4.3
 		c-0.4,2.4-0.8,5.8-0.9,7.5c0,2.9,0.3,3.1,3.3,3.1c2.4,0,4.8,0.2,7.2,0.7c2.9,0.5,3.7,0.5,2.9-0.3c-0.6-0.7-3.4-1.4-6.2-1.8
@@ -170,7 +111,8 @@
 		c0.4,0.3-1.4,18.6-2.3,23.5c-0.5,2.2-0.3,3.2,0.3,2.8c1-0.6,2.9-14,3.6-23.7l0.2-3.5l7.9-1.2c4.4-0.7,8.3-1,8.8-0.7s0.8,0,0.8-0.5
 		C39.3,8.1,33.7,8.4,21.3,10.6z" class="svg-elem-14"></path>
 </g>
-</svg>
+            </svg>
+
             <h1>Our Goal</h1>
             <p>
                 After a prolonged mass exodus of Saxons from Transylvania, in 1993 the MET set about highlighting the precious heritage which was under threat and embarked on saving and restoring abandoned buildings, farms and fortified churches.
@@ -182,6 +124,7 @@
                 <li>To broaden the philosophy into what we call ‘The Whole Village Project', supporting the development of all aspects of village life and agriculture, while safeguarding the underlying principles of conservation;</li>
                 <li>To help the Villagers set up their own businesses and guesthouses.</li>
             </ul>
+            <a href="" onclick="" class="button fit">Continue Reading</a>
         </div>
     </section>
     <!-- About Us:Who-We-Are -->
@@ -193,10 +136,10 @@
                     <div class="col-3"></div>
                     <div class="col-6"><span><img class="image fit" src="images/Trustees/JessicaDouglasandMaryWalsh.jpg" alt=""></span><p class="align-center">Jessica Douglas-Home and Mary Walsh</p></div>
                     <div class="col-3"></div>
-                    <div class="col-12"><p class="align-center"><b>Jessica Douglas-Home</b> </br> <i>Chairman</i>  </br> Artist and writer. She was a Trustee of the Jan Hus Foundation in Czechoslovakia (known as the Underground University) to help persecuted academics before the fall of the Berlin wall by smuggling in books and journals so that the dissidents could keep abreast of their subjects. She then co-founded three more in Slovakia, Poland, and Hungary - and finally the Mihai Eminescu Trust in Romania under the auspices of President Ceausescu’s dictatorship.   </p></div>
-                    <div class="col-12"><p class="align-center"><b>Mary Walsh</b></br><i>Trustee</i>  </br>Mary Walsh has worked in the Balkans since the late 1980s. She was a founder member of the British wing of the international Campaign for the Protection of Romanian Villages in 1988 (also known as Operation Romanian Villages), and found the first village in Britain, Welsh Newton in Herefordshire, to twin with Jedu in northern Romania. From January 1990 she drove trucks of humanitarian aid, medicines, books and writing materials to twinned villages in Romania and numerous times throughout the war to Bosnia and Croatia. She has also worked as an independent election observer in the former Soviet Union and Balkans. She became a trustee of the Mihai Eminescu Trust in 1992.</p></div>
-                    <div class="col-12"><span class="image left"><img src="images/Trustees/NoelMalcolm.jpg" alt=""></span><p><b>Sir Noel Malcolm</b></br><i>Trustee</i></br>Senior Research Fellow at All Souls College, Oxford, and a Fellow of the British Academy. His many publications on the history and culture of south-eastern Europe include George Enescu: His Life and Music (1990). This was the first study in English of the great Romanian composer, based on research carried out in Bucharest in the early 1980s. He was the founding Trustee of the Mihai Eminescu Trust in 1986/87 and travelled to Romania to help the dissidents, three years before the fall of the Berlin Wall.</p></div>
-                    <div class="col-12"><span class="image left"><img src="images/Trustees/JeremyAmos.jpg" alt=""></span><p><b>Jeremy Amos</b></br><i>Trustee</i></br>Architect. He has a specialised practice where all projects are personally handled. Amos has a long experience of attending to requirements of private clients. He engages in restoring and building and designing gardens for them both in England and in Europe. He has been a Trustee of the Mihai Eminescu Trust since 1992 He is also a founder of the Horizon Foundation in Holland which supports threatened cultural heritage and identity as well as educational and social initiatives, in Latin America, Russia, Georgia, Bulgaria, Romania, The Balkans, Turkey, Namibia as well as in Germany, Italy and the United Kingdom.</p></div>
+                    <div class="col-12"><p class="align-center"><b>Jessica Douglas-Home</b> <br/> <i>Chairman</i>  <br/> Artist and writer. She was a Trustee of the Jan Hus Foundation in Czechoslovakia (known as the Underground University) to help persecuted academics before the fall of the Berlin wall by smuggling in books and journals so that the dissidents could keep abreast of their subjects. She then co-founded three more in Slovakia, Poland, and Hungary - and finally the Mihai Eminescu Trust in Romania under the auspices of President Ceausescu’s dictatorship.   </p></div>
+                    <div class="col-12"><p class="align-center"><b>Mary Walsh</b><br><i>Trustee</i>  <br>Mary Walsh has worked in the Balkans since the late 1980s. She was a founder member of the British wing of the international Campaign for the Protection of Romanian Villages in 1988 (also known as Operation Romanian Villages), and found the first village in Britain, Welsh Newton in Herefordshire, to twin with Jedu in northern Romania. From January 1990 she drove trucks of humanitarian aid, medicines, books and writing materials to twinned villages in Romania and numerous times throughout the war to Bosnia and Croatia. She has also worked as an independent election observer in the former Soviet Union and Balkans. She became a trustee of the Mihai Eminescu Trust in 1992.</p></div>
+                    <div class="col-12"><span class="image left"><img src="images/Trustees/NoelMalcolm.jpg" alt=""></span><p><b>Sir Noel Malcolm</b><br/><i>Trustee</i><br/>Senior Research Fellow at All Souls College, Oxford, and a Fellow of the British Academy. His many publications on the history and culture of south-eastern Europe include George Enescu: His Life and Music (1990). This was the first study in English of the great Romanian composer, based on research carried out in Bucharest in the early 1980s. He was the founding Trustee of the Mihai Eminescu Trust in 1986/87 and travelled to Romania to help the dissidents, three years before the fall of the Berlin Wall.</p></div>
+                    <div class="col-12"><span class="image left"><img src="images/Trustees/JeremyAmos.jpg" alt=""></span><p><b>Jeremy Amos</b><br/><i>Trustee</i><br/>Architect. He has a specialised practice where all projects are personally handled. Amos has a long experience of attending to requirements of private clients. He engages in restoring and building and designing gardens for them both in England and in Europe. He has been a Trustee of the Mihai Eminescu Trust since 1992 He is also a founder of the Horizon Foundation in Holland which supports threatened cultural heritage and identity as well as educational and social initiatives, in Latin America, Russia, Georgia, Bulgaria, Romania, The Balkans, Turkey, Namibia as well as in Germany, Italy and the United Kingdom.</p></div>
                 </div>
             </div>
         </div>
@@ -205,36 +148,22 @@
     <section id="about-us_our-story" class="wrapper style3 fade-up">
         <div class="inner">
             <h2>Origins of the trust</h2>
-            <p> The past and the future</br>
-                Are two sides of one page;</br>
-                He who learns them will discover</br>
-                A beginning's found at the end of an age.</br>
+            <p> The past and the future<br/>
+                Are two sides of one page;<br/>
+                He who learns them will discover<br/>
+                A beginning's found at the end of an age.<br/>
                 <i>Mihai Eminescu (1850 - 1889)</i>
             </p>
             <span class="image right"><img src="images/loopmet/image29.jpeg" alt="" /></span>
-            <p>The Mihai Eminescu Trust was formed during Ceaușescu’s dictatorship, to help persecuted dissident academics by smuggling in books and journals so that they could keep abreast with the civilisation they had once shared. Our clandestine contacts took us to strange places. In 1987 I visited the lonely mountain hut of Constantin Noica, a much-revered sage who told me the ancient villages around him were facing the imminent threat of “systematisation”—obliteration by bulldozing—to make room for factories and concrete apartment blocks.</br>
-                In response, the Trust formed the English-speaking wing of an international movement to save the Saxon villages. Would we have succeeded without the collapse of communism? We will never know. But the Berlin Wall fell, Ceaușescu was killed and overnight the tables were turned. Until then, our movements had been restricted and kept under 24-hour surveillance. With Ceaușescu’s death, we could at last visit the villages without the constant attentions of the Securitate.</br>
-            </p>
-            <span class="image left"><img src="images/loopmet/image11.jpeg" alt="" /></span>
-            <p>
-                In July 1993, with Mark Almond and Christine Stone, I set off from Bucharest north to Brașov, quite unprepared for what we were to find in Transylvania. Driving through an area the size of Wales, we visited but a fraction of the 250 Saxon villages and seven towns of the Siebenburgen. Here were fortified, frescoed churches, cobbled streetscapes, stuccoed and gabled houses, fields, woods and valleys filled with wildflowers, rare birds and butterflies. Cows and buffalo made their daily excursions into the hills, each returning un-erringly to its own courtyard at dusk for milking.</br>
-                Houses were boarded up, churches all but deserted. An elderly Saxon would stop us, weeping over the exodus that had so recently taken place—telling us of their families’ flight and abandonment of their heritage. For, following the events of 1989, Germany’s Foreign Minister Hans-Dietrich Genscher had invited Eastern Europe’s German-speaking populations to return to the Fatherland, and only a few families remained.</br>
-                A spell had been cast on us. We had discovered a corner of Europe with all its ancient richness and beauty intact. Laid out before us was not just a panorama of evocative architecture and magnificent churches, nor was it reducible to the unique harmony between man and nature. Its secret was that it was the outcome of successful settlement, the visible result of routines maintained over centuries.</br>
-                The introduction of the Saxon culture to Hungarian Transylvania dates back to 1153, when King Geza recruited mercenaries from the Mosel and the Rhineland to guard his kingdom’s borders. In exchange he gave them fertile land, their own legal system and permanent rights of settlement and autonomy. Over the following eight centuries, the Saxons built their villages, kept their seclusion, intermarried and retained their own laws, religion, educational system and their arts and crafts. What now, we asked ourselves, would become of this fallen paradise? There must surely be an alternative to decay or cheap modernisation. At first tentatively, later with a growing confidence encouraged by the commitment of long-term support by the Packard Humanities Institute—and always hand in hand with the villagers—we began a campaign to revive the local economy through the renewal of its heritage. We saved houses and churches from the dilapidation that had overtaken them since the flight of their Saxon inhabitants; in parallel we turned our attention to the villagers’ means of earning a living. We called this our Whole Village Project - an idea which we developed with the Horizon Foundation.</br>
-            </p>
-            <span class="image right"><img src="images/loopmet/image98.jpeg" alt="" /></span>
-            <p>
-                To give the villagers’ a trade, and to instill pride in their surroundings, we offered training in traditional techniques and the use of authentic materials. Most of them now were Romanians or gypsies, but a few dynamic Saxons remained, one of whom, Caroline Fernolend, became our national director and an inspiration for our hopes and ambitions. To date we have completed over 1,602 restoration projects, large and small, in 29 villages and towns.</br>
-                To add professionalism to the task, we brought craftsmen from Germany and Britain to supervise (and themselves imbibe) the ways of villagers steeped in a centuries-old congruity of man, nature and architecture. We brought back to life once-thriving crafts: locksmithery and iron forging, masonry, joinery and metalworking, brick and tile making, painting, stuccowork and carving, linen making and basket weaving.</br>
-                What we were seeking was a reconciliation of old and new. Without care of their heritage, the villages would die. But they would also die if they became nothing more than empty relics, to be gazed at by curious tourists. In these villages beauty and prosperity had gone hand in hand for centuries. To divorce them would be to kill them both. With our help, the enthusiasm of the villagers to become self-sufficient was stirred.</br>
-                <i>Jessica Douglas-Home (Founder of The Mihai Eminescu Trust)</i>
-            </p>
+            <p>The Mihai Eminescu Trust was formed during Ceaușescu’s dictatorship, to help persecuted dissident academics by smuggling in books and journals so that they could keep abreast with the civilisation they had once shared. Our clandestine contacts took us to strange places. In 1987 I visited the lonely mountain hut of Constantin Noica, a much-revered sage who told me the ancient villages around him were facing the imminent threat of “systematisation”—obliteration by bulldozing—to make room for factories and concrete apartment blocks.<br/>
+                In response...</p>
+            <a href="https://www.mihaieminescutrust.ro/en/about-met/" class="button fit">Continue Reading</a>
         </div>
     </section>
     <!-- About Us:Patrons-And-Advisers -->
     <section id="about-us_patrons-and-advisers" class="wrapper style1-alt fade-up">
         <div class="inner">
-            <h2>Patrons</h2>
+            <h2>Patrons (Past and Present)</h2>
             <p>Our key benefactors have been the <b>Packard Humanities Institute</b> and the <b>Horizon Foundation</b>. We owe them our deepest thanks for their unfailing commitment to our goals and their great generosity in helping us to achieve them.</p>
             <p>We also thank:</p>
             <div class="box alt">
@@ -321,7 +250,7 @@
     <section id="about-us_sister-organisation" class="wrapper style2-alt fade-up">
         <div class="inner">
             <h2>Our Sister Organisation in Romania</h2>
-            <p>Since 2019, we have handed over full responsibility and executive authority for the running of the Trust to our Romanian colleagues under the directorship of Caroline Fernolend and her trustees.</br>
+            <p>Since 2019, we have handed over full responsibility and executive authority for the running of the Trust to our Romanian colleagues under the directorship of Caroline Fernolend and her trustees.<br/>
                 MET UK remains an active partner, providing help and advice when required, fundraising, and giving donations for special projects.
             </p>
             <a href="https://www.mihaieminescutrust.ro/en/about-met/" class="button fit">Visit their website</a>
@@ -330,37 +259,28 @@
     <!-- Projects -->
     <section id="projects" class="wrapper style3 spotlights">
         <div class="inner">
-            <h2 class="align-center">Selected Projects</h2>
+            <h2 class="align-center">Projects</h2>
         </div>
         <section>
-            <img src="images/CompletedProjectsThumbnails/119RichisThumbnail.jpg" alt="119 Richis Front" data-position="center center" />
+            <img src="images/CompletedProjectsThumbnails/ApafiManorThumbnail.jpg" alt="119 Richis Front" data-position="center center" />
             <div class="content">
                 <div class="inner">
-                    <h2>119 Richis</h2>
+                    <h2>Buildings</h2>
+                    <p>Work the trust has undertaken in conservation and renovation of buildings</p>
                     <ul class="actions">
-                        <li><a href="Content/Projects/Buildings/119Richis.html" class="button">Learn more</a></li>
+                        <li><a href="Content/Projects/AllProjects.html" class="button">Click Here</a></li>
                     </ul>
                 </div>
             </div>
         </section>
         <section>
-            <img src="images/CompletedProjectsThumbnails/ApafiManorThumbnail.jpg" alt="Apafi Manor Front" data-position="top center" />
+            <img src="images/CompletedProjectsThumbnails/119RichisThumbnail.jpg" alt="Apafi Manor Front" data-position="top center" />
             <div class="content">
                 <div class="inner">
-                    <h2>Apafi Manor</h2>
+                    <h2>Other</h2>
+                    <p>Other improvement efforts in Romania</p>
                     <ul class="actions">
-                        <li><a href="Content/Projects/Buildings/ApafiManor.html" class="button">Learn more</a></li>
-                    </ul>
-                </div>
-            </div>
-        </section>
-        <section>
-            <img src="images/CompletedProjectsThumbnails/ViscriThumbnail.jpg" alt="Viscri blue house" data-position="25% 25%" />
-            <div class="content">
-                <div class="inner">
-                    <h2>163 Viscri</h2>
-                    <ul class="actions">
-                        <li><a href="Content/Projects/Buildings/Viscri.html" class="button">Learn more</a></li>
+                        <li><a href="Content/Projects/AllProjects.html#other" class="button">Click Here</a></li>
                     </ul>
                 </div>
             </div>
@@ -383,17 +303,6 @@
             </div>
         </section>
         <section>
-            <img src="images/CompletedProjectsThumbnails/ApafiManorThumbnail.jpg" alt="Apafi Manor Front" data-position="top center" />
-            <div class="content">
-                <div class="inner">
-                    <h2>Apafi Manor</h2>
-                    <ul class="actions">
-                        <li><a href="Content/Guesthouses/ApafiManor.html" class="button">Learn more</a></li>
-                    </ul>
-                </div>
-            </div>
-        </section>
-        <section>
             <img src="images/CompletedProjectsThumbnails/ViscriThumbnail.jpg" alt="Viscri blue house" data-position="25% 25%" />
             <div class="content">
                 <div class="inner">
@@ -404,11 +313,21 @@
                 </div>
             </div>
         </section>
-    </section>
-
+        <div class="inner">
+            <a href="Content/Guesthouses/AllGuesthouses.html" class="button fit">See More</a>
+        </div>
     </section>
     <!-- Slideshow -->
-    <section id="slideshow" class="wrapper style2-alt fade-up">
+    <section id="slideshow" class="wrapper style3-alt fade-up">
+        <div class="inner">
+            <a href="Content/Slideshow.html"><img src="images/SlideshowThumb.jpg" class="image fit"></a>
+            <a href="Content/Slideshow.html" class="button fit">Play Slideshow</a>
+        </div>
+    </section>
+    <section id="map" class="wrapper style2-alt fade-up">
+        <div class="inner">
+            <a href="Content/Map.html"><span class="image fit"><img src="images/MapMarkings.jpg" alt="Map"></span></a>
+        </div>
     </section>
     <!-- Publications -->
     <section id="publications_selection" class="wrapper style3-alt fade-up">
@@ -421,8 +340,8 @@
     <!-- News -->
     <section id="news_selection" class="wrapper style1 fade-up">
         <div class="inner">
-            <h2>News</h2>
-            <h5>Some Notable events</h5>
+            <h2>Events</h2>
+            <h5>Notable events</h5>
             <div class="box">
             <h3>Apafi Manor the setting for award winning film "Malmkrog"</h3>
             <h4>1st March 2020</h4>
@@ -437,7 +356,7 @@
             </div>
 
             </div>
-            <h5>Explore the Archive:</h5>
+            <h5>Explore the news archive:</h5>
             <div class="box" id="news_archive">
                 <div class="row gtr-uniform align-center">
                     <div class="col-3"><a class="button primary" href="Content/News/News2020.html">2020</a></div>
@@ -454,13 +373,7 @@
     <!-- Support us -->
     <section id="supportus_donate" class="wrapper style1-alt fade-up">
         <div class="inner">
-        <h3>Donate</h3>
             <a href="https://drive.google.com/file/d/1i7wf8pUm8KwT2hJ5BGkM1QzPCfSA-hex/view?usp=sharing" class="button fit primary">Donate</a>
-        </div>
-    </section>
-    <section id="supportus_how-to-help" class="wrapper style2-alt fade-up">
-        <div class="inner">
-            <h3>Other ways to help</h3>
         </div>
     </section>
     <!--Contact us-->
@@ -513,11 +426,9 @@
 <script src="assets/js/jquery.min.js"></script>
 <script src="assets/js/jquery.scrollex.min.js"></script>
 <script src="assets/js/jquery.scrolly.min.js"></script>
-<script src="assets/js/superfish.js"></script>
 <script src="assets/js/browser.min.js"></script>
 <script src="assets/js/breakpoints.min.js"></script>
 <script src="assets/js/util.js"></script>
 <script src="assets/js/main.js"></script>
-
 </body>
 </html>

@@ -16,6 +16,10 @@
 		$('#overlay').toggleClass('nav-active');
 	});
 
+	$('.overlay ul li a').click(function() {
+		$('#overlay').toggleClass('nav-active');
+	});
+
 	// Breakpoints.
 		breakpoints({
 			xlarge:   [ '1281px',  '1680px' ],

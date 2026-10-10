@@ -1,10 +1,24 @@
 <!DOCTYPE HTML>
 <html lang="en-uk">
 <head >
-    <title>MET Map</title>
+    <title>Map | Mihai Eminescu Trust</title>
     <meta charset="utf-8"/>
-    <meta name="viewport" content="width=device-width, initial-scale=1, user-scalable=no" />
+    <meta name="viewport" content="width=device-width, initial-scale=1" />
+    <meta name="theme-color" content="#45ba9f" />
+    <meta name="color-scheme" content="only light" />
+    <meta name="description" content="After a prolonged mass exodus of Saxons from Transylvania, in 1993 the MET set about highlighting the precious heritage which was under threat and embarked…" />
+    <meta property="og:site_name" content="Mihai Eminescu Trust" />
+    <meta property="og:type" content="website" />
+    <meta property="og:title" content="Map | Mihai Eminescu Trust" />
+    <meta property="og:description" content="After a prolonged mass exodus of Saxons from Transylvania, in 1993 the MET set about highlighting the precious heritage which was under threat and embarked…" />
+    <meta property="og:url" content="https://www.mihaieminescutrust.org/Content/Map.html" />
+    <meta property="og:image" content="https://www.mihaieminescutrust.org/images/MapMarkings.jpg" />
+    <meta name="twitter:card" content="summary_large_image" />
+    <link rel="icon" type="image/png" sizes="32x32" href="../images/favicon-32.png" />
+    <link rel="icon" type="image/png" sizes="192x192" href="../images/favicon-192.png" />
+    <link rel="apple-touch-icon" href="../images/apple-touch-icon.png" />
     <link rel="stylesheet" href="../assets/css/main.css" />
+    <link rel="stylesheet" href="../assets/css/custom.css" />
     <noscript><link rel="stylesheet" href="../assets/css/noscript.css" /></noscript>
 </head>
 <body class="is-preload">
@@ -26,8 +40,8 @@
     <section id="main" class="wrapper">
         <div class="inner">
             <h1 class="major align-center">Map</h1>
-            <div class="box">
-            <img class="image align-center" src="../images/MapMarkings.jpg" usemap="#image-map" alt="">
+            <div class="box map-wrap">
+            <img id="met-map" src="../images/MapMarkings.jpg" usemap="#image-map" width="1320" height="917" alt="Map of the MET villages in Transylvania">
 
             <map name="image-map">
                 <area target="" alt="Viscri" title="Viscri" href="Projects/Buildings/Viscri.html" coords="1107,504,1016,466" shape="rect">
@@ -41,6 +55,7 @@
                 <area target="" alt="Crit" title="Crit" href="https://www.experiencetransylvania.ro/guesthouse/crit-217/" coords="928,354,1021,393" shape="rect">
             </map>
             </div>
+            <p class="map-hint">Click or tap a highlighted village to see its project.</p>
 
 
         </div>
@@ -65,6 +80,27 @@
 <script src="../assets/js/breakpoints.min.js"></script>
 <script src="../assets/js/util.js"></script>
 <script src="../assets/js/main.js"></script>
+<script src="../assets/js/lightbox.js"></script>
+<script>
+// Keep the clickable village areas lined up when the map is scaled to fit the screen.
+(function () {
+    var img = document.getElementById('met-map');
+    var areas = document.querySelectorAll('map[name="image-map"] area');
+    var original = [];
+    for (var i = 0; i < areas.length; i++) original.push(areas[i].getAttribute('coords'));
+    function scale() {
+        var ratio = img.clientWidth / (img.naturalWidth || 1320);
+        for (var i = 0; i < areas.length; i++) {
+            if (!original[i]) continue;
+            areas[i].setAttribute('coords', original[i].split(',').map(function (n) {
+                return Math.round(parseFloat(n) * ratio);
+            }).join(','));
+        }
+    }
+    if (img.complete) scale(); else img.addEventListener('load', scale);
+    window.addEventListener('resize', scale);
+})();
+</script>
 
 </body>
 </html>

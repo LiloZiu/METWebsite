@@ -11,14 +11,43 @@
 		$sidebar = $('#sidebar');
 
 	//Mobile Nav
+	function setMobileNav(open) {
+		$('#toggle').toggleClass('toggle-active', open);
+		$('#overlay').toggleClass('nav-active', open);
+		$body.toggleClass('nav-open', open);
+	}
+
 	$('#toggle').click(function() {
-		$(this).toggleClass('toggle-active');
-		$('#overlay').toggleClass('nav-active');
+		setMobileNav(!$('#overlay').hasClass('nav-active'));
 	});
 
+	// Close the menu (and reset the button) after picking a section.
 	$('.overlay ul li a').click(function() {
-		$('#overlay').toggleClass('nav-active');
+		setMobileNav(false);
 	});
+
+	$(document).on('keydown', function(e) {
+		if (e.key === 'Escape') setMobileNav(false);
+	});
+
+	// Sub-page header: always visible on larger screens; on phones it hides while
+	// scrolling down (more room to read) and reappears as soon as you scroll up.
+	var $header = $('#header');
+	if ($header.length) {
+		var lastY = window.pageYOffset;
+		$window.on('scroll', function() {
+			var y = window.pageYOffset,
+				h = $header.outerHeight();
+			if (window.innerWidth > 736 || y <= h) {
+				$header.removeClass('header-hidden');
+			} else if (y > lastY + 6) {
+				$header.addClass('header-hidden');
+			} else if (y < lastY - 6) {
+				$header.removeClass('header-hidden');
+			}
+			lastY = y;
+		});
+	}
 
 	// Breakpoints.
 		breakpoints({
@@ -82,7 +111,8 @@
 
 					var	$this = $(this),
 						id = $this.attr('href'),
-						$section = $(id);
+						$section = $(id),
+						$overlayLink = $('#overlay a[href="' + id + '"]');
 
 					// No section for this link? Bail.
 						if ($section.length < 1)
@@ -103,6 +133,10 @@
 
 								// Activate section.
 									$section.removeClass('inactive');
+
+								// Mirror the current section in the phone/tablet menu.
+									$('#overlay a').removeClass('active');
+									$overlayLink.addClass('active');
 
 								// No locked links? Deactivate all links and activate this section's one.
 									if ($sidebar_a.filter('.active-locked').length == 0) {

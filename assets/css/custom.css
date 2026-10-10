@@ -1,0 +1,721 @@
+/*
+	MET site refinements
+	Loaded after main.css on every page. Keeps the original Hyperspace
+	template untouched so changes can be reviewed (or removed) in one place.
+*/
+
+/* ---------- General ---------- */
+
+img {
+	max-width: 100%;
+	height: auto;
+}
+
+/* Footer copyright was almost invisible */
+#footer > .inner .menu {
+	color: rgba(255, 255, 255, 0.55);
+}
+
+/* ---------- Sub-page header ---------- */
+
+#header > nav > ul > li a {
+	color: rgba(255, 255, 255, 0.75);
+}
+
+	#header > nav > ul > li a:hover,
+	#header > nav > ul > li a.active {
+		color: #ffffff;
+	}
+
+@media screen and (max-width: 480px) {
+
+	#header {
+		padding: 0 1.5em;
+	}
+
+	#header > nav > ul {
+		display: flex;
+		flex-wrap: wrap;
+		gap: 0 1.5em;
+		padding: 0.6em 0;
+	}
+
+		#header > nav > ul > li,
+		#header > nav > ul > li:first-child {
+			margin-left: 0;
+		}
+
+			#header > nav > ul > li a {
+				font-size: 0.65em;
+				height: auto;
+				line-height: 1.5;
+				padding: 0.9em 0;
+			}
+
+}
+
+/* Comfortable line length for long-form sub-pages on wide screens */
+#header + #wrapper > .wrapper > .inner,
+#header + #wrapper + #footer > .inner {
+	max-width: 58em;
+}
+
+/* ---------- Home page: sidebar / mobile menu ----------
+   The top bar version of the sidebar overflows on tablets,
+   so the hamburger menu takes over below 980px. */
+
+@media screen and (max-width: 980px) {
+
+	/* overlay.css adds the navy top bar + menu in its place */
+	#sidebar {
+		display: none;
+	}
+
+}
+
+/* ---------- Spotlights (Projects / Guesthouses on home page) ---------- */
+
+.spotlights > section > .image {
+	border-bottom: 0;
+}
+
+@media screen and (max-width: 736px) {
+
+	.spotlights > section > .image {
+		height: 62vw;
+		min-height: 0;
+	}
+
+	.spotlights > section > .content {
+		padding: 2em 1.5em 0.5em 1.5em;
+	}
+
+}
+
+/* ---------- Home page: About Us / trustees ---------- */
+
+.trustee-photo {
+	margin: 0 auto 2.5em auto;
+	max-width: 24em;
+	text-align: center;
+}
+
+	.trustee-photo img {
+		border-radius: 0.25em;
+		display: block;
+		width: 100%;
+	}
+
+	.trustee-photo figcaption {
+		font-size: 0.9em;
+		font-style: italic;
+		margin-top: 0.75em;
+		opacity: 0.85;
+	}
+
+.trustee {
+	border-top: solid 1px rgba(255, 255, 255, 0.25);
+	padding: 1.75em 0 0.25em 0;
+}
+
+	.trustee:after {
+		clear: both;
+		content: '';
+		display: block;
+	}
+
+	.trustee h3 {
+		margin-bottom: 0;
+	}
+
+	.trustee .trustee-role {
+		font-style: italic;
+		margin-bottom: 0.75em;
+		opacity: 0.85;
+	}
+
+	.trustee .image.left {
+		max-width: 11em;
+		margin-bottom: 0.5em;
+	}
+
+@media screen and (max-width: 736px) {
+
+	.trustee .image.left {
+		float: none;
+		display: block;
+		max-width: 9em;
+		margin: 0 0 1em 0;
+		top: 0;
+	}
+
+}
+
+/* Patrons & contributors: tidy, evenly spaced columns */
+.name-list {
+	display: grid;
+	gap: 0.15em 1.5em;
+	grid-template-columns: repeat(auto-fill, minmax(14em, 1fr));
+	margin: 0 0 2.5em 0;
+}
+
+	.name-list.compact {
+		grid-template-columns: repeat(auto-fill, minmax(11em, 1fr));
+	}
+
+	.name-list > * {
+		margin: 0;
+		padding: 0.35em 0;
+	}
+
+@media screen and (max-width: 736px) {
+
+	.name-list,
+	.name-list.compact {
+		grid-template-columns: 1fr 1fr;
+		gap: 0 1em;
+	}
+
+}
+
+/* ---------- Home page: publications ---------- */
+
+.pub-covers {
+	display: flex;
+	flex-wrap: wrap;
+	gap: 1.5em;
+	margin: 0.5em 0 2em 0;
+}
+
+	.pub-covers a {
+		border-bottom: 0;
+		display: block;
+		width: 11em;
+	}
+
+		.pub-covers a img {
+			border-radius: 0.25em;
+			box-shadow: 0 0.5em 1.5em rgba(0, 0, 0, 0.25);
+			display: block;
+			transition: transform 0.2s ease;
+			width: 100%;
+		}
+
+		.pub-covers a:hover img {
+			transform: translateY(-0.25em);
+		}
+
+		.pub-covers a span {
+			display: block;
+			font-size: 0.85em;
+			font-weight: bold;
+			line-height: 1.4;
+			margin-top: 0.75em;
+		}
+
+@media screen and (max-width: 736px) {
+
+	.pub-covers {
+		gap: 1em;
+	}
+
+		.pub-covers a {
+			width: calc(50% - 0.5em);
+		}
+
+}
+
+/* ---------- Year buttons (news archive, newsletters) ---------- */
+
+.year-buttons {
+	display: flex;
+	flex-wrap: wrap;
+	gap: 0.85em;
+	justify-content: center;
+}
+
+	.year-buttons .button {
+		padding: 0 2.25em;
+	}
+
+	.year-buttons.left {
+		justify-content: flex-start;
+		margin-bottom: 2em;
+	}
+
+@media screen and (max-width: 480px) {
+
+	.year-buttons {
+		display: grid;
+		grid-template-columns: repeat(3, 1fr);
+		gap: 0.75em;
+	}
+
+		.year-buttons .button {
+			padding: 0;
+			width: 100%;
+		}
+
+}
+
+/* ---------- Home page: contact ---------- */
+
+ul.contact.contact-grid {
+	display: grid;
+	gap: 2em 3em;
+	grid-template-columns: repeat(2, minmax(0, 1fr));
+	margin: 0;
+}
+
+	ul.contact.contact-grid > li {
+		margin: 0;
+	}
+
+	ul.contact.contact-grid h3 {
+		margin-bottom: 0.25em;
+	}
+
+	ul.contact.contact-grid p {
+		margin: 0;
+	}
+
+	ul.contact.contact-grid a {
+		word-break: break-word;
+	}
+
+@media screen and (max-width: 736px) {
+
+	ul.contact.contact-grid {
+		grid-template-columns: 1fr;
+		gap: 1.5em;
+	}
+
+}
+
+/* ---------- Card grids (Projects, Guesthouses, Publications) ---------- */
+
+.row > [class*="col-"] > a:has(> .box) {
+	border-bottom: 0;
+	display: block;
+	height: 100%;
+}
+
+	.row > [class*="col-"] > a > .box {
+		background: rgba(255, 255, 255, 0.03);
+		height: 100%;
+		margin-bottom: 0;
+		transition: border-color 0.2s ease, background-color 0.2s ease, transform 0.2s ease;
+	}
+
+		.row > [class*="col-"] > a:hover > .box {
+			background: rgba(255, 255, 255, 0.07);
+			border-color: rgba(255, 255, 255, 0.4);
+			transform: translateY(-2px);
+		}
+
+		.row > [class*="col-"] > a > .box > .image.fit {
+			margin-bottom: 1em;
+		}
+
+		/* Photo cards: same shape so every card lines up */
+		.row > [class*="col-"] > a > .box:has(> h2) > .image.fit img {
+			aspect-ratio: 4 / 3;
+			object-fit: cover;
+		}
+
+		.row > [class*="col-"] > a > .box > h2,
+		.row > [class*="col-"] > a > .box > h3 {
+			font-size: 1.1em;
+			line-height: 1.35;
+			margin: 0;
+		}
+
+/* ---------- Phones ---------- */
+
+@media screen and (max-width: 736px) {
+
+	.wrapper > .inner {
+		padding: 2.5em 1.5em 1em 1.5em;
+	}
+
+	/* The template shrinks h4/h5 to near-unreadable sizes on phones */
+	h4 {
+		font-size: 0.9em;
+	}
+
+	h5 {
+		font-size: 0.75em;
+	}
+
+	.button {
+		font-size: 0.65em;
+	}
+
+	.button.small {
+		font-size: 0.55em;
+	}
+
+	/* Photos laid out in grids: full width instead of tiny thumbnails */
+	.row > .col-4,
+	.row > .col-5,
+	.row > .col-6,
+	.row > .col-7,
+	.row > .col-8,
+	.row > .col-9 {
+		width: 100%;
+	}
+
+	/* Floated photos: stack above the text instead of squeezing it */
+	.image.left,
+	.image.right {
+		display: block;
+		float: none;
+		margin: 0 0 1.5em 0;
+		max-width: 100%;
+		top: 0;
+		width: 100%;
+	}
+
+	.image.fit {
+		margin-bottom: 1em;
+	}
+
+	/* "For more details and rates  [Click here]": button on its own line */
+	p.align-center > b + .button {
+		display: table;
+		margin: 0.75em auto 0 auto;
+	}
+
+	/* Long button labels (e.g. "See guesthouse page") */
+	.button {
+		max-width: 100%;
+		overflow: hidden;
+		text-overflow: ellipsis;
+	}
+
+}
+
+/* ---------- Map page ---------- */
+
+.map-wrap {
+	padding: 0.5em;
+}
+
+	.map-wrap img {
+		border-radius: 0.25em;
+		display: block;
+		width: 100%;
+	}
+
+.map-hint {
+	font-size: 0.85em;
+	margin-top: 1em;
+	opacity: 0.8;
+	text-align: center;
+}
+
+/* ---------- Slideshow page ---------- */
+
+.fs-back {
+	background: rgba(10, 41, 96, 0.8);
+	border-radius: 2em;
+	color: #ffffff;
+	font-family: Arial, Helvetica, sans-serif;
+	font-size: 13px;
+	font-weight: bold;
+	left: 16px;
+	letter-spacing: 0.15em;
+	padding: 0.7em 1.3em;
+	position: fixed;
+	text-decoration: none;
+	text-transform: uppercase;
+	top: 16px;
+	z-index: 1000;
+}
+
+	.fs-back:hover {
+		background: rgba(10, 41, 96, 0.95);
+	}
+
+/* ==========================================================
+   Depth & shadows
+   Soft, navy-tinted shadows so photos, cards and bars lift
+   off the flat colour bands. Colours and layout unchanged.
+   ========================================================== */
+
+:root {
+	--shadow-sm: 0 0.15em 0.5em rgba(4, 18, 48, 0.18);
+	--shadow-md: 0 0.5em 1.5em rgba(4, 18, 48, 0.28);
+	--shadow-lg: 0 1em 2.5em rgba(4, 18, 48, 0.35);
+}
+
+/* Photos */
+.image img,
+.trustee-photo img,
+.map-wrap img {
+	box-shadow: var(--shadow-md);
+}
+
+#welcome .image img {
+	box-shadow: var(--shadow-lg);
+}
+
+/* Photos inside cards: the card carries the shadow instead */
+.row > [class*="col-"] > a > .box .image img {
+	box-shadow: none;
+}
+
+/* Colour bands: a faint top highlight and bottom shade so each
+   section reads as its own panel rather than a flat stripe */
+#wrapper > section.wrapper[class*="style"] {
+	background-image: linear-gradient(to bottom, rgba(255, 255, 255, 0.035), rgba(0, 0, 0, 0.045));
+	box-shadow: inset 0 1px 0 rgba(255, 255, 255, 0.07);
+}
+
+/* Text on the lighter teal bands: a whisper of shadow for legibility */
+.wrapper.style1, .wrapper.style1-alt,
+.wrapper.style2, .wrapper.style2-alt,
+.wrapper.style3, .wrapper.style3-alt,
+.spotlights > section > .content {
+	text-shadow: 0 1px 2px rgba(4, 18, 48, 0.18);
+}
+
+	.wrapper .button,
+	.pub-covers span {
+		text-shadow: none;
+	}
+
+/* Desktop sidebar and phone/tablet top bar */
+#sidebar {
+	box-shadow: 0.25em 0 1.75em rgba(0, 0, 0, 0.3);
+}
+
+.navbar-header {
+	box-shadow: 0 2px 14px rgba(0, 0, 0, 0.28) !important;
+}
+
+/* Sub-page header: stays at the top while reading.
+   On phones it slides away when scrolling down and comes back when
+   scrolling up (see main.js), so it doesn't take up the small screen. */
+#header {
+	box-shadow: 0 2px 14px rgba(4, 18, 48, 0.3);
+	position: -webkit-sticky;
+	position: sticky;
+	top: 0;
+	z-index: 100;
+	transition: transform 0.3s ease;
+}
+
+	#header.header-hidden {
+		transform: translateY(-110%);
+	}
+
+/* Boxes (event panel, "details and rates", galleries) */
+.box:not(.alt) {
+	background-color: rgba(255, 255, 255, 0.025);
+	box-shadow: var(--shadow-sm);
+}
+
+/* Cards: resting shadow, deeper on hover */
+.row > [class*="col-"] > a > .box {
+	box-shadow: var(--shadow-md);
+}
+
+	.row > [class*="col-"] > a:hover > .box {
+		box-shadow: var(--shadow-lg);
+	}
+
+/* Buttons: solid (white) buttons float slightly; all buttons lift on hover */
+.button,
+button {
+	transition: border-color 0.2s ease, box-shadow 0.2s ease, transform 0.2s ease !important;
+}
+
+	.button.primary {
+		box-shadow: var(--shadow-sm);
+	}
+
+	.button:hover,
+	button:hover {
+		box-shadow: var(--shadow-md);
+		transform: translateY(-1px);
+	}
+
+	.button:active,
+	button:active {
+		box-shadow: var(--shadow-sm);
+		transform: translateY(0);
+	}
+
+/* Mobile menu button & slideshow back button */
+.fs-back {
+	box-shadow: var(--shadow-md);
+}
+
+@media (prefers-reduced-motion: reduce) {
+
+	.button:hover,
+	button:hover,
+	.row > [class*="col-"] > a:hover > .box,
+	.pub-covers a:hover img {
+		transform: none;
+	}
+
+}
+
+
+/* ==========================================================
+   Photo viewer (assets/js/lightbox.js)
+   ========================================================== */
+
+.lb-zoomable {
+	cursor: zoom-in;
+}
+
+	.lb-zoomable:focus-visible {
+		outline: 2px solid #ffffff;
+		outline-offset: 3px;
+	}
+
+html.lb-lock,
+html.lb-lock body {
+	overflow: hidden;
+}
+
+.lb {
+	align-items: center;
+	-webkit-backdrop-filter: blur(8px);
+	backdrop-filter: blur(8px);
+	background: rgba(5, 18, 45, 0.97);
+	display: flex;
+	inset: 0;
+	justify-content: center;
+	opacity: 0;
+	padding: 60px 72px 64px 72px;
+	position: fixed;
+	transition: opacity 0.2s ease;
+	z-index: 10000;
+}
+
+	.lb[hidden] {
+		display: none;
+	}
+
+	.lb.lb-open {
+		opacity: 1;
+	}
+
+.lb-figure {
+	align-items: center;
+	display: flex;
+	flex-direction: column;
+	height: 100%;
+	justify-content: center;
+	margin: 0;
+	width: 100%;
+}
+
+.lb-img {
+	border-radius: 4px;
+	box-shadow: 0 1em 3em rgba(0, 0, 0, 0.5);
+	max-height: calc(100% - 3.5em);
+	max-width: 100%;
+	object-fit: contain;
+	transition: opacity 0.2s ease;
+}
+
+	.lb-img.lb-loading {
+		opacity: 0.35;
+	}
+
+.lb-caption {
+	color: rgba(255, 255, 255, 0.85);
+	font-size: 15px;
+	line-height: 1.5;
+	margin-top: 14px;
+	max-width: 46em;
+	text-align: center;
+}
+
+.lb-count {
+	color: rgba(255, 255, 255, 0.6);
+	font-size: 13px;
+	font-weight: bold;
+	left: 20px;
+	letter-spacing: 0.15em;
+	position: absolute;
+	top: 22px;
+}
+
+.lb .lb-btn {
+	background: rgba(255, 255, 255, 0.12);
+	border: 0 !important;
+	border-radius: 50%;
+	box-shadow: none;
+	color: #ffffff !important;
+	cursor: pointer;
+	font-size: 30px;
+	font-weight: normal;
+	height: 48px;
+	letter-spacing: 0;
+	line-height: 46px;
+	padding: 0;
+	position: absolute;
+	text-align: center;
+	text-transform: none;
+	transform: none !important;
+	width: 48px;
+}
+
+	.lb .lb-btn:after {
+		display: none;
+	}
+
+	.lb .lb-btn:hover,
+	.lb .lb-btn:focus-visible {
+		background: rgba(255, 255, 255, 0.25);
+		box-shadow: none;
+	}
+
+	.lb .lb-btn[hidden] {
+		display: none;
+	}
+
+.lb .lb-close {
+	right: 12px;
+	top: 10px;
+}
+
+.lb .lb-prev,
+.lb .lb-next {
+	margin-top: -24px;
+	top: 50%;
+}
+
+.lb .lb-prev {
+	left: 12px;
+}
+
+.lb .lb-next {
+	right: 12px;
+}
+
+@media screen and (max-width: 736px) {
+
+	.lb {
+		padding: 56px 10px 80px 10px;
+	}
+
+	/* arrows move to the bottom corners; swiping also works */
+	.lb .lb-prev,
+	.lb .lb-next {
+		bottom: 14px;
+		margin-top: 0;
+		top: auto;
+	}
+
+	.lb-caption {
+		font-size: 14px;
+	}
+
+}

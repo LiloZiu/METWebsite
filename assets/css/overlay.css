@@ -1,93 +1,172 @@
-@import url(http://fonts.googleapis.com/css?family=Vollkorn|Roboto);
-.toggle-button {
-    position: fixed;
-    top: 8px;
-    left: 15px;
-    padding: 9px 10px;
-    margin: 8px 15px 8px 0;
-    height: 20px;
-    width: 35px;
-    cursor: pointer;
-    z-index: 500;
+/*
+	Phone & tablet navigation (below 981px).
+	Uses the same navy, link style and teal-to-blue underline as the
+	desktop sidebar so every screen size shares one colour scheme.
+*/
+
+.navbar-header {
     display: none;
 }
 
-@media screen and (max-width: 736px) {
+.toggle-button {
+    display: none;
+}
+
+@media screen and (max-width: 980px) {
+
+    /* Navy top bar, same colour as the desktop sidebar */
+    .navbar-header {
+        display: flex;
+        align-items: center;
+        justify-content: space-between;
+        position: fixed;
+        top: 0;
+        left: 0;
+        width: 100%;
+        height: 3.5em;
+        padding: 0 0.5em 0 1.5em;
+        background: rgba(10, 41, 96, 0.98);
+        box-shadow: 0 1px 0 rgba(255, 255, 255, 0.06);
+        z-index: 600;
+    }
+
+    .navbar-title {
+        border: 0;
+        color: #ffffff;
+        font-size: 0.7em;
+        font-weight: bold;
+        letter-spacing: 0.25em;
+        text-decoration: none;
+        text-transform: uppercase;
+        white-space: nowrap;
+    }
 
     #toggle {
         display: block;
     }
 
+    /* Leave room for the bar, and stop it covering section titles after a menu jump */
+    #sidebar + #wrapper {
+        padding-top: 3.5em;
+    }
+
+    #wrapper > section {
+        scroll-margin-top: 3.5em;
+    }
+
+}
+
+/* Menu button */
+.toggle-button {
+    position: relative;
+    width: 44px;
+    height: 44px;
+    padding: 14px 11px;
+    box-sizing: border-box;
+    cursor: pointer;
+    -webkit-tap-highlight-color: transparent;
 }
 
 .bar {
-    background-color: #ff5252;
+    background-color: #ffffff;
+    border-radius: 2px;
     display: block;
     width: 100%;
-    height: 5px;
+    height: 2px;
     border: 0;
     -webkit-transition: all .35s ease;
     transition: all .35s ease;
 }
 .bar + .bar {
-    margin-top: 4px;
-}
-.middle {
-    top: 11px;
-}
-.bottom {
-    top: 22px;
+    margin-top: 5px;
 }
 .toggle-button:hover {
-    opacity: .7;
-}
-.toggle-active .bar {
-    background-color: #fff;
+    opacity: .8;
 }
 .toggle-active .top {
-    -webkit-transform: translateY(6px) translateX(0) rotate(45deg);
+    -webkit-transform: translateY(7px) rotate(45deg);
+    transform: translateY(7px) rotate(45deg);
 }
 .toggle-active .middle {
-   opacity: 0;
+    opacity: 0;
 }
 .toggle-active .bottom {
-    -webkit-transform: translateY(-12px) translateX(0) rotate(-45deg);
+    -webkit-transform: translateY(-7px) rotate(-45deg);
+    transform: translateY(-7px) rotate(-45deg);
 }
 
+/* Full-screen menu, styled like the desktop sidebar */
 .overlay {
     position: fixed;
     z-index: 500;
-    background-image: linear-gradient(120deg, #45ba9f 0%, #4a7cb5 100%);
+    background: #0a2960;
     top: 0;
     left: 0;
     width: 100%;
     height: 0;
+    overflow: hidden;
     visibility: hidden;
     opacity: 0;
+    display: flex;
+    align-items: center;
+    justify-content: center;
     -webkit-transition: opacity .35s, visibility .35s, height .35s;
+    transition: opacity .35s, visibility .35s, height .35s;
 }
 .nav-active {
     opacity: 1;
     visibility: visible;
     height: 100%;
-/*    max-height: 340px;*/
+    overflow-y: auto;
 }
 .overlay ul {
     display: block;
-    position: relative;
-    top: 50px;
-    left: 0;
-    font-family: 'Vollkorn', serif;
-    font-size: 25px;
-    font-weight: 400;
+    margin: 0;
+    padding: 5em 0 2em 0;
     text-align: center;
     list-style: none;
-    padding: 0;
 }
 .overlay ul li {
     display: block;
+    padding: 0;
 }
 .overlay ul li a {
-    color: #fff;
+    position: relative;
+    display: inline-block;
+    border: 0;
+    color: rgba(255, 255, 255, 0.55);
+    font-size: 0.8em;
+    font-weight: bold;
+    letter-spacing: 0.25em;
+    line-height: 1.75;
+    padding: 0.85em 0.25em;
     text-decoration: none;
+    text-transform: uppercase;
+    -webkit-transition: color 0.2s ease;
+    transition: color 0.2s ease;
+    -webkit-tap-highlight-color: transparent;
+}
+.overlay ul li a:after {
+    content: '';
+    position: absolute;
+    left: 0;
+    bottom: 0.35em;
+    height: 0.2em;
+    width: 100%;
+    max-width: 0;
+    border-radius: 0.2em;
+    background-image: linear-gradient(to right, #45ba9f, #4a7cb5);
+    -webkit-transition: max-width 0.2s ease;
+    transition: max-width 0.2s ease;
+}
+.overlay ul li a:hover,
+.overlay ul li a.active {
+    color: #ffffff;
+}
+.overlay ul li a.active:after {
+    max-width: 100%;
+}
+
+body.nav-open {
+    overflow: hidden;
 }
